@@ -12,6 +12,7 @@ exit()
 
 # TODO: install submlime plugin for easy edit CSVs
 # TODO: install submlime plugin for easy open explorer
+# TODO: install phone app for free airport wifis
 
 # constants OR read config file
 MPG = 27
@@ -31,16 +32,13 @@ searchDayEnd = date("Janurary 8 2019")
 
 
 def main():
-
+	pass
 	# read driveDest.csv validate?
 	# make requests to google flights
 		# start with longest trip length possible
-		# dynamic stop?
+		# dynamic stop?  nonono too many requests can be banned
 
 	# match driveDest to google flights numbers
-
-
-
 
 
 if __name__ == '__main__':
