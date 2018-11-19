@@ -25,11 +25,10 @@ airportTimeMulti = 1.00
 driveTimeMulti  = 1.00
 shuttleTimeMulti = 1.00
 
-
-scheduleStrictness = 10
-searchDayStart = date("December 18 2018")
-searchDayEnd = date("Janurary 8 2019")
-
+searchDayStart = date(2018, 12, 18)
+searchDayEnd = date(2019, 1, 8)
+searchMinTripDays = 10
+assert (searchDayEnd - searchDayStart).days > searchMinTripDays
 
 def main():
 	pass
