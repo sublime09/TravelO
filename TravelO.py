@@ -1,6 +1,13 @@
 # import beautiful soup?
 from time import time
-from date import date
+
+from datetime import time, date
+
+import gtfo
+url = gtfo.roundtrip().departing("JFK").returning("JNB").open()
+print(url)
+exit()
+
 # import read file? 
 
 # TODO: install submlime plugin for easy edit CSVs
