@@ -1,17 +1,41 @@
-# import beautiful soup?
+from bs4 import BeautifulSoup
 from time import time
-
+from pprint import pprint
 from datetime import time, date
-
-import gtfo
-url = gtfo.roundtrip().departing("JFK").returning("JNB").url()
-exit()
-
-# import read file?
 
 # TODO: install submlime plugin for easy edit CSVs
 # TODO: install submlime plugin for easy open explorer
 # TODO: install phone app for free airport wifis
+
+# pprint(vars(gtfo), indent=2, depth=1)
+# this searches methods
+
+saveFilename = 'gFlightResult.html' 
+
+def readSavedFlight():
+	html_doc = None
+	with open('gFlightResult.html', 'r') as f:
+		html_doc = f.read()
+	return html_doc
+
+def gtfoToUrlToFile():
+	import gtfo
+	import urllib.request
+	tripDeets = gtfo.roundtrip().departing("ROA").returning("STL")
+	gFlightURL = str(tripDeets.url())
+	html_doc = None
+	with urllib.request.urlopen(str(gFlightURL)) as f:
+		html_doc = f.read()
+	with open(saveFilename, 'wb') as f:
+		f.write(html_doc)
+	return html_doc
+
+
+html_doc = readSavedFlight()
+
+soup = BeautifulSoup(html_doc, 'html.parser')
+print(soup.prettify())
+
 
 # constants OR read config file
 MPG = 27
